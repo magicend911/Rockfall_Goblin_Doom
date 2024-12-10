@@ -6,7 +6,6 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float forwardSpeed = 5f; // Скорость движения вперед (по X)
     [SerializeField] private float laneDistance = 3f; // Расстояние между полосами
     [SerializeField] private Player player;
-    [SerializeField] private float rotationSpeed = 10f; // Скорость вращения
 
     private Rigidbody _rb;
     private int targetLane = 1; // Текущая полоса (0, 1, 2)
