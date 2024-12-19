@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf71e3ddc9c68846a6a0ad08baeec11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverGroup: {fileID: 40366980}
+  _gameOverGroup: {fileID: 40366980}
   _restartButton: {fileID: 939382997}
   _rock: {fileID: 2136664116}
 --- !u!225 &40366980

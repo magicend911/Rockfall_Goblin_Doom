@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup gameOverGroup;
+    [SerializeField] private CanvasGroup _gameOverGroup;
     [SerializeField] private Button _restartButton;
     [SerializeField] private Rock _rock;
 
@@ -21,12 +21,16 @@ public class GameOverScreen : MonoBehaviour
 
     private void Start()
     {
-        gameOverGroup.alpha = 0;
+        _gameOverGroup.interactable = false;
+        _gameOverGroup.blocksRaycasts = false;
+        _gameOverGroup.alpha = 0;
     }
 
     private void OnDied()
     {
-        gameOverGroup.alpha = 1;
+        _gameOverGroup.interactable = true;
+        _gameOverGroup.blocksRaycasts = true;
+        _gameOverGroup.alpha = 1;
         Time.timeScale = 0;
     }
 

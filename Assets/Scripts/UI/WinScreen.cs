@@ -28,12 +28,16 @@ public class WinScreen : MonoBehaviour
     private void Start()
     {
         gameWinGroup.alpha = 0;
+        gameWinGroup.interactable = false; // Отключает взаимодействие
+        gameWinGroup.blocksRaycasts = false;
         Time.timeScale = 1;
     }
 
     private void OnWin()
     {
         gameWinGroup.alpha = 1;
+        gameWinGroup.interactable = true; // Включает взаимодействие
+        gameWinGroup.blocksRaycasts = true; // Включает перехват кликов
         Time.timeScale = 0;
     }
 
