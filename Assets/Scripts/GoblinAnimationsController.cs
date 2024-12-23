@@ -24,9 +24,8 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        animator.SetTrigger("Die"); // Запускаем анимацию смерти
-
-        // Удаляем объект после завершения анимации
+        animator.SetTrigger("Die");
+        
         Destroy(gameObject, destroyDelay);
     }
 }
