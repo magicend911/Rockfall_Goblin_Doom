@@ -29,8 +29,14 @@ public class AudioManager : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat(VolumeParameter, Mathf.Log10(volume) * 20); // Логарифмическая шкала
-        PlayerPrefs.SetFloat(VolumePrefsKey, volume); // Сохраняем громкость
+        // Устанавливаем минимальное значение громкости
+        float adjustedVolume = Mathf.Clamp(volume, 0.0001f, 1f);
+
+        // Преобразуем громкость в логарифмическую шкалу
+        audioMixer.SetFloat(VolumeParameter, Mathf.Log10(adjustedVolume) * 20);
+
+        // Сохраняем громкость в PlayerPrefs
+        PlayerPrefs.SetFloat(VolumePrefsKey, volume);
         PlayerPrefs.Save();
     }
 }
