@@ -268,7 +268,7 @@ ModelImporter:
       name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|stay dead"
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|stay dead"
       internalID: 4980479769196207865
-      firstFrame: 0
+      firstFrame: 80
       lastFrame: 167
       wrapMode: 0
       orientationOffsetY: 0
@@ -276,7 +276,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
