@@ -8,7 +8,7 @@ public class WinScreen : MonoBehaviour
     [SerializeField] private Button _next;
     [SerializeField] private Button _restart;
     [SerializeField] private Button _quit;
-    [SerializeField] private Rock _rock;
+    [SerializeField] private RockController _rock;
 
     private void OnEnable()
     {

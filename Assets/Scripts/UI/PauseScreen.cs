@@ -8,7 +8,7 @@ public class PauseScreen : MonoBehaviour
     [SerializeField] private Button _back;
     [SerializeField] private Button _exit;
     [SerializeField] private Button _restart;
-    [SerializeField] private Rock _rock; // Ссылка на объект Rock
+    [SerializeField] private RockController _rock; // Ссылка на объект Rock
 
     private void OnEnable()
     {
@@ -60,7 +60,6 @@ public class PauseScreen : MonoBehaviour
 
     private void OnExitButtonClick()
     {
-        ResumeGame(); // Возобновляем время перед выходом
         SceneManager.LoadScene(0);
     }
 }

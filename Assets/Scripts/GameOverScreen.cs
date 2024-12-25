@@ -7,6 +7,7 @@ public class GameOverScreen : MonoBehaviour
     [SerializeField] private CanvasGroup _gameOverGroup;
     [SerializeField] private Button _restartButton;
     [SerializeField] private Rock _rock;
+    [SerializeField] private RockController _rockSound;
 
     private void OnEnable()
     {
@@ -32,6 +33,7 @@ public class GameOverScreen : MonoBehaviour
         _gameOverGroup.blocksRaycasts = true;
         _gameOverGroup.alpha = 1;
         Time.timeScale = 0;
+        _rockSound.PauseGame();
     }
 
     private void OnRestartButtonClick()
