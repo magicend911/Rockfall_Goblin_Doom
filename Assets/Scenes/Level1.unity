@@ -10480,7 +10480,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0bf29e26f3056ea499fe313711b138bc, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1214e71dbb6d5c44b8b0ec1f41354f61, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.063
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -45117,7 +45117,7 @@ MonoBehaviour:
   rollingSound: {fileID: 8300000, guid: abceb4922f742894e9f05f4a2c696082, type: 3}
   minVelocityToPlaySound: 0.1
   maxVelocity: 10
-  maxVolume: 1
+  maxVolume: 0.7
   minPitch: 0.8
   maxPitch: 1.5
 --- !u!82 &2136664119
@@ -45132,7 +45132,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0bf29e26f3056ea499fe313711b138bc, type: 2}
   m_audioClip: {fileID: 8300000, guid: abceb4922f742894e9f05f4a2c696082, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
