@@ -8,6 +8,7 @@ public class WinScreen : MonoBehaviour
     [SerializeField] private Button _next;
     [SerializeField] private Button _restart;
     [SerializeField] private Button _quit;
+    [SerializeField] private Rock _rock;
 
     private void OnEnable()
     {
@@ -28,7 +29,7 @@ public class WinScreen : MonoBehaviour
     private void Start()
     {
         gameWinGroup.alpha = 0;
-        gameWinGroup.interactable = false; // Отключает взаимодействие
+        gameWinGroup.interactable = false;
         gameWinGroup.blocksRaycasts = false;
         Time.timeScale = 1;
     }
@@ -39,6 +40,7 @@ public class WinScreen : MonoBehaviour
         gameWinGroup.interactable = true; // Включает взаимодействие
         gameWinGroup.blocksRaycasts = true; // Включает перехват кликов
         Time.timeScale = 0;
+        _rock.PauseGame();
     }
 
     private void OnNextLevelButtonClick()

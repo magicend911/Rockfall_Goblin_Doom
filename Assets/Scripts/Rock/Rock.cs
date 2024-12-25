@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,7 +18,8 @@ public class Rock : MonoBehaviour
 
     private AudioSource _audioSource;
     private Rigidbody _rigidbody;
-    private bool isDead = false; // Флаг, указывающий на состояние смерти
+    private bool isDead = false; // Флаг для состояния смерти
+    private bool isPaused = false; // Флаг для остановки игры
 
     public event UnityAction<int, int> HealthChanged;
     public event UnityAction<int> ScoreChanged;
@@ -37,7 +39,7 @@ public class Rock : MonoBehaviour
 
     void Update()
     {
-        if (!isDead) // Звук обновляется только если объект не мертв
+        if (!isPaused) // Звук обновляется только если объект жив и игра не на паузе
         {
             HandleRollingSound();
         }
@@ -74,15 +76,38 @@ public class Rock : MonoBehaviour
 
         if (currentHealth <= 0 && !isDead)
         {
-            isDead = true; // Устанавливаем состояние смерти
-            _audioSource.Stop(); // Останавливаем звук
-            Died?.Invoke();
+            StartCoroutine(DelayedDeath());
         }
+    }
+
+    private IEnumerator DelayedDeath()
+    {
+        yield return new WaitForSeconds(2f); // Задержка в 2 секунды.
+        Died?.Invoke();
     }
 
     public void AddScore()
     {
         _score++;
         ScoreChanged?.Invoke(_score);
+    }
+
+    public void PauseGame()
+    {
+        isPaused = true; // Устанавливаем флаг паузы
+        StopSound(); // Останавливаем звук
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false; // Снимаем флаг паузы
+    }
+
+    private void StopSound()
+    {
+        if (_audioSource.isPlaying)
+        {
+            _audioSource.Stop();
+        }
     }
 }
