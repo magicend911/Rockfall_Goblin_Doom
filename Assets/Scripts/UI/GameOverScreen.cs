@@ -8,9 +8,11 @@ public class GameOverScreen : MonoBehaviour
     [SerializeField] private Button _restartButton;
     [SerializeField] private Rock _rock;
     [SerializeField] private RockController _rockSound;
+    [SerializeField] private DeathZone _gameOver;
 
     private void OnEnable()
     {
+        _gameOver.GameOver += OnDied;
         _rock.Died += OnDied;
         _restartButton.onClick.AddListener(OnRestartButtonClick);
     }
@@ -18,6 +20,7 @@ public class GameOverScreen : MonoBehaviour
     {
         _rock.Died -= OnDied;
         _restartButton.onClick.RemoveListener(OnRestartButtonClick);
+        _gameOver.GameOver -= OnDied;
     }
 
     private void Start()

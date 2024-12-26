@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Rock : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 3;
+    [SerializeField] private AudioSource _fullCrush; // Звук разрушения
+    [SerializeField] private GameObject _crushPrefab; // Префаб груды камней
 
     private int currentHealth;
     private int _score;
@@ -28,15 +30,24 @@ public class Rock : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            _fullCrush.Play();
             StopMove?.Invoke();
-            StartCoroutine(DelayedDeath());
+            StartCoroutine(DestroyAndReplace());
         }
     }
 
-    private IEnumerator DelayedDeath()
+    private IEnumerator DestroyAndReplace()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f); // Задержка перед заменой
+
+        // Создаём груду камней на месте текущего объекта
+        Instantiate(_crushPrefab, transform.position, transform.rotation);
+
+        // Вызываем событие смерти
         Died?.Invoke();
+
+        // Удаляем текущий объект
+        Destroy(gameObject);
     }
 
     public void AddScore()
