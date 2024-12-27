@@ -16,8 +16,9 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Rock rockScore = collision.GetComponent<Rock>();
+        Enemy enemy = collision.GetComponent<Enemy>();
 
-        if (rockScore != null && !_isDead)
+        if (rockScore != null || enemy != null && !_isDead)
         {
             Die(); 
         }
