@@ -8,14 +8,14 @@ public class PauseScreen : MonoBehaviour
     [SerializeField] private Button _back;
     [SerializeField] private Button _exit;
     [SerializeField] private Button _restart;
-    [SerializeField] private RockController _rock; // Ссылка на объект Rock
+    [SerializeField] private RockController _rock; 
 
     private void OnEnable()
     {
         _restart.onClick.AddListener(OnRestartButtonClick);
         _exit.onClick.AddListener(OnExitButtonClick);
         _back.onClick.AddListener(OnBackButtonClick);
-        PauseGame(); // Останавливаем игру и уведомляем Rock
+        PauseGame(); 
     }
 
     private void OnDisable()
@@ -25,13 +25,18 @@ public class PauseScreen : MonoBehaviour
         _back.onClick.RemoveListener(OnBackButtonClick);
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void PauseGame()
     {
         Time.timeScale = 0;
 
         if (_rock != null)
         {
-            _rock.PauseGame(); // Останавливаем звук у Rock
+            _rock.PauseGame(); 
         }
     }
 
@@ -41,19 +46,19 @@ public class PauseScreen : MonoBehaviour
 
         if (_rock != null)
         {
-            _rock.ResumeGame(); // Возобновляем звук у Rock
+            _rock.ResumeGame();
         }
     }
 
     private void OnBackButtonClick()
     {
-        ResumeGame(); // Возобновляем игру
+        ResumeGame(); 
         _pausePanel.SetActive(false);
     }
 
     private void OnRestartButtonClick()
     {
-        ResumeGame(); // Возобновляем время перед перезапуском
+        ResumeGame();
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex);
     }

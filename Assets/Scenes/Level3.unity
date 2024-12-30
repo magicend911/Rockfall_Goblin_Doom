@@ -3568,9 +3568,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 127523129750687119, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 288371664032639455, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -69.99902
       objectReference: {fileID: 0}
     - target: {fileID: 675052755728337337, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: _rock
@@ -3579,10 +3579,6 @@ PrefabInstance:
     - target: {fileID: 2844975274127794381, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206329772702201898, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
-      propertyPath: m_Sprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4483591163555126625, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: _rock
@@ -3688,10 +3684,6 @@ PrefabInstance:
       propertyPath: _startPoint
       value: 
       objectReference: {fileID: 447975744}
-    - target: {fileID: 6778190737441153198, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
-      propertyPath: m_Alpha
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7693498174258382512, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: _rock
       value: 
@@ -3869,11 +3861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8548575754622767050, guid: 7d9b3953a0856914db6f03658c43f80e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.29
+      value: 20.794
       objectReference: {fileID: 0}
     - target: {fileID: 8548575754622767050, guid: 7d9b3953a0856914db6f03658c43f80e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 262.29
+      value: 258.508
       objectReference: {fileID: 0}
     - target: {fileID: 8548575754622767050, guid: 7d9b3953a0856914db6f03658c43f80e, type: 3}
       propertyPath: m_LocalRotation.w
