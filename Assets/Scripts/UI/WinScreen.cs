@@ -41,6 +41,8 @@ public class WinScreen : MonoBehaviour
         gameWinGroup.blocksRaycasts = true; // Включает перехват кликов
         Time.timeScale = 0;
         _rock.PauseGame();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void OnNextLevelButtonClick()

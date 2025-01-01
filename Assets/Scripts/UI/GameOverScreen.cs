@@ -37,6 +37,8 @@ public class GameOverScreen : MonoBehaviour
         _gameOverGroup.alpha = 1;
         Time.timeScale = 0;
         _rockSound.PauseGame();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void OnRestartButtonClick()

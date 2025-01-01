@@ -8,7 +8,7 @@ public class PauseScreen : MonoBehaviour
     [SerializeField] private Button _back;
     [SerializeField] private Button _exit;
     [SerializeField] private Button _restart;
-    [SerializeField] private RockController _rock; 
+    [SerializeField] private RockController _rock;
 
     private void OnEnable()
     {
@@ -23,11 +23,6 @@ public class PauseScreen : MonoBehaviour
         _restart.onClick.RemoveListener(OnRestartButtonClick);
         _exit.onClick.RemoveListener(OnExitButtonClick);
         _back.onClick.RemoveListener(OnBackButtonClick);
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void PauseGame()
@@ -54,6 +49,8 @@ public class PauseScreen : MonoBehaviour
     {
         ResumeGame(); 
         _pausePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnRestartButtonClick()
