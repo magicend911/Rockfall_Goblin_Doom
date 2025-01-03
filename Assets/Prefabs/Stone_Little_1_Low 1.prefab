@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 179.951
+      value: 2.011673
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.797
+      value: 7.149143
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 139.262
+      value: -9.433
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
       propertyPath: m_LocalRotation.y
@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5e9a1a75343174e44a48d1f18914d6be, type: 2}
+    - target: {fileID: -5754084199372789682, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2547213687853511187, guid: 0e23e116919fd5d4489acbb7188fdefd, type: 3}
     - target: {fileID: 919132149155446097, guid: b99501b0a8b5b5a48a4e887e52357f4e, type: 3}
       propertyPath: m_Name
       value: Stone_Little_1_Low 1
@@ -119,7 +123,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0bf29e26f3056ea499fe313711b138bc, type: 2}
   m_audioClip: {fileID: 8300000, guid: 364c0718985a4794eb25b14e02930887, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
