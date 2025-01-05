@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private int damage = 10;
+    [SerializeField] private int _damage = 10;
 
     private AudioSource _audioSource;
 
@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour
         if (playerHealth != null)
         {
             _audioSource.Play();
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(_damage);
         }
     }
 }

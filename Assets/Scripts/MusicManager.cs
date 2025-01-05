@@ -11,7 +11,12 @@ public class MusicManager : MonoBehaviour
         {
             _instance = this;
             DontDestroyOnLoad(gameObject);
+
             _audioSource = GetComponent<AudioSource>();
+            if (_audioSource == null)
+            {
+                Debug.LogError("AudioSource is missing on MusicManager!");
+            }
         }
         else
         {
@@ -21,7 +26,13 @@ public class MusicManager : MonoBehaviour
 
     public void PlayMusic(AudioClip newClip)
     {
-        if (_audioSource.clip != newClip) // Проверяем, играет ли уже нужный трек
+        if (_audioSource == null)
+        {
+            Debug.LogError("AudioSource is not initialized!");
+            return;
+        }
+
+        if (_audioSource.clip != newClip)
         {
             _audioSource.clip = newClip;
             _audioSource.Play();

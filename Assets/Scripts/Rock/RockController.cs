@@ -6,17 +6,17 @@ public class RockController : MonoBehaviour
 {
     [SerializeField] private Rock _rock;
     [SerializeField] private DeathZone _deathZone;
-    [SerializeField] private float moveSpeed = 5f; // Скорость движения шара
-    [SerializeField] private AudioClip rollingSound; // Звук катящегося камня
-    [SerializeField] private float minVelocityToPlaySound = 0.1f; // Минимальная скорость для воспроизведения звука
-    [SerializeField] private float maxVelocity = 10f; // Скорость, при которой звук достигает максимальной громкости
-    [SerializeField] private float maxVolume = 1f; // Максимальная громкость звука
-    [SerializeField] private float minPitch = 0.8f; // Минимальный питч звука
-    [SerializeField] private float maxPitch = 1.5f; // Максимальный питч звука
-    [SerializeField] private LayerMask groundLayer; // Слой для проверки земли
-    [SerializeField] private float groundCheckDistance = 0.1f; // Расстояние для проверки земли
+    [SerializeField] private float _moveSpeed = 5f; // Скорость движения шара
+    [SerializeField] private AudioClip _rollingSound; // Звук катящегося камня
+    [SerializeField] private float _minVelocityToPlaySound = 0.1f; // Минимальная скорость для воспроизведения звука
+    [SerializeField] private float _maxVelocity = 10f; // Скорость, при которой звук достигает максимальной громкости
+    [SerializeField] private float _maxVolume = 1f; // Максимальная громкость звука
+    [SerializeField] private float _minPitch = 0.8f; // Минимальный питч звука
+    [SerializeField] private float _maxPitch = 1.5f; // Максимальный питч звука
+    [SerializeField] private LayerMask _groundLayer; // Слой для проверки земли
+    [SerializeField] private float _groundCheckDistance = 0.1f; // Расстояние для проверки земли
 
-    private Rigidbody rb;
+    private Rigidbody _rb;
     private AudioSource _audioSource;
     private bool isPaused = false; // Флаг для проверки состояния паузы
     private bool isGrounded = false; // Флаг для проверки нахождения на земле
@@ -24,11 +24,11 @@ public class RockController : MonoBehaviour
     private void Start()
     {
         // Инициализация компонентов
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
         _audioSource = GetComponent<AudioSource>();
 
         // Настройка источника звука
-        _audioSource.clip = rollingSound;
+        _audioSource.clip = _rollingSound;
         _audioSource.loop = true;
     }
 
@@ -58,7 +58,7 @@ public class RockController : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
 
         // Применяем силу к Rigidbody
-        rb.AddForce(movement * moveSpeed);
+        _rb.AddForce(movement * _moveSpeed);
     }
 
     private void Update()
@@ -76,14 +76,14 @@ public class RockController : MonoBehaviour
     private void CheckGround()
     {
         // Проверяем, находится ли объект на поверхности
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, groundCheckDistance, groundLayer);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, _groundCheckDistance, _groundLayer);
     }
 
     private void HandleRollingSound()
     {
-        float speed = rb.velocity.magnitude;
+        float speed = _rb.velocity.magnitude;
 
-        if (speed > minVelocityToPlaySound)
+        if (speed > _minVelocityToPlaySound)
         {
             if (!_audioSource.isPlaying)
             {
@@ -91,9 +91,9 @@ public class RockController : MonoBehaviour
             }
 
             // Нормализуем скорость и регулируем громкость и питч
-            float normalizedSpeed = Mathf.Clamp01(speed / maxVelocity);
-            _audioSource.volume = Mathf.Lerp(0, maxVolume, normalizedSpeed);
-            _audioSource.pitch = Mathf.Lerp(minPitch, maxPitch, normalizedSpeed);
+            float normalizedSpeed = Mathf.Clamp01(speed / _maxVelocity);
+            _audioSource.volume = Mathf.Lerp(0, _maxVolume, normalizedSpeed);
+            _audioSource.pitch = Mathf.Lerp(_minPitch, _maxPitch, normalizedSpeed);
         }
         else
         {
@@ -122,13 +122,13 @@ public class RockController : MonoBehaviour
 
     private void StopingMove()
     {
-        moveSpeed = 0;
-        rb.velocity = Vector3.zero; // Останавливаем движение
-        rb.angularVelocity = Vector3.zero; // Останавливаем вращение
+        _moveSpeed = 0;
+        _rb.velocity = Vector3.zero; // Останавливаем движение
+        _rb.angularVelocity = Vector3.zero; // Останавливаем вращение
     }
 
     private void TakeControl()
     {
-        moveSpeed = 0;
+        _moveSpeed = 0;
     }
 }

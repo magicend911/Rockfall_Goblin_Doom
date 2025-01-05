@@ -23,6 +23,7 @@ public class DeathZone : MonoBehaviour
         {
             TakeMove?.Invoke();
             StartCoroutine(DelayedDeath());
+            _audioSource.Play();
         }
     }
     private IEnumerator DelayedDeath()

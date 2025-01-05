@@ -3,12 +3,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class WinScreen : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup gameWinGroup;
+    [SerializeField] private CanvasGroup _gameWinGroup;
     [SerializeField] private FinishLine _finish;
     [SerializeField] private Button _next;
     [SerializeField] private Button _restart;
     [SerializeField] private Button _quit;
-    [SerializeField] private RockController _rock;
+    [SerializeField] private RockController _rockController;
+    [SerializeField] private Rock _rock;
+    [SerializeField] private GameObject _oneStar;
+    [SerializeField] private GameObject _twoStars;
+    [SerializeField] private GameObject _threeStars;
 
     private void OnEnable()
     {
@@ -28,21 +32,19 @@ public class WinScreen : MonoBehaviour
 
     private void Start()
     {
-        gameWinGroup.alpha = 0;
-        gameWinGroup.interactable = false;
-        gameWinGroup.blocksRaycasts = false;
+        _gameWinGroup.alpha = 0;
+        _gameWinGroup.interactable = false;
+        _gameWinGroup.blocksRaycasts = false;
         Time.timeScale = 1;
     }
 
     private void OnWin()
     {
-        gameWinGroup.alpha = 1;
-        gameWinGroup.interactable = true; // Включает взаимодействие
-        gameWinGroup.blocksRaycasts = true; // Включает перехват кликов
         Time.timeScale = 0;
-        _rock.PauseGame();
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        _rockController.PauseGame();
+        CursorTrue();
+        InteractableWinGroup();
+        CurrentStarsForWin();
     }
 
     private void OnNextLevelButtonClick()
@@ -61,4 +63,40 @@ public class WinScreen : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    private void CursorTrue()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    private void InteractableWinGroup()
+    {
+        _gameWinGroup.alpha = 1;
+        _gameWinGroup.interactable = true;
+        _gameWinGroup.blocksRaycasts = true;
+    }
+
+    private void CurrentStarsForWin()
+    {
+        if (_rock.Score >= 50 && _rock.CurrentHealth >= 75)
+        {
+            _threeStars.SetActive(true);
+            _twoStars.SetActive(false);
+            _oneStar.SetActive(false);
+        }
+        else if (_rock.CurrentHealth >= 75)
+        {
+            _threeStars.SetActive(false);
+            _twoStars.SetActive(true);
+            _oneStar.SetActive(false);
+        }
+        else
+        {
+            _threeStars.SetActive(false);
+            _twoStars.SetActive(false);
+            _oneStar.SetActive(true);
+        }
+    }
 }
+

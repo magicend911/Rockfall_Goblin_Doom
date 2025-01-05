@@ -5,12 +5,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource), typeof(Rigidbody))]
 public class Rock : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 3;
-    [SerializeField] private AudioSource _fullCrush; // Звук разрушения
-    [SerializeField] private GameObject _crushPrefab; // Префаб груды камней
+    [SerializeField] private int _maxHealth = 3;
+    [SerializeField] private AudioSource _fullCrush; 
+    [SerializeField] private GameObject _crushPrefab; 
 
-    private int currentHealth;
-    private int _score;
+    public int CurrentHealth { get; private set; }
+    public int Score { get; private set; }
 
     public event UnityAction<int, int> HealthChanged;
     public event UnityAction<int> ScoreChanged;
@@ -19,16 +19,16 @@ public class Rock : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
-        HealthChanged?.Invoke(currentHealth, maxHealth);
+        CurrentHealth = _maxHealth;
+        HealthChanged?.Invoke(CurrentHealth, _maxHealth);
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        HealthChanged?.Invoke(currentHealth, maxHealth);
+        CurrentHealth -= damage;
+        HealthChanged?.Invoke(CurrentHealth, _maxHealth);
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             _fullCrush.Play();
             StopMove?.Invoke();
@@ -52,7 +52,7 @@ public class Rock : MonoBehaviour
 
     public void AddScore()
     {
-        _score++;
-        ScoreChanged?.Invoke(_score);
+        Score++;
+        ScoreChanged?.Invoke(Score);
     }
 }

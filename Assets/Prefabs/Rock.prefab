@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16675238d9bf0a458433648d42b7c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  _maxHealth: 100
   _fullCrush: {fileID: 1809873557018862406}
-  _crush: {fileID: 0}
+  _crushPrefab: {fileID: 2979186396848052892, guid: ec11a70b01445964b80c13c57e9f259a, type: 3}
 --- !u!114 &8826502641395914563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,17 +166,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rock: {fileID: 8595506736817862716}
   _deathZone: {fileID: 0}
-  moveSpeed: 7
-  rollingSound: {fileID: 8300000, guid: abceb4922f742894e9f05f4a2c696082, type: 3}
-  minVelocityToPlaySound: 0.1
-  maxVelocity: 10
-  maxVolume: 0.7
-  minPitch: 0.8
-  maxPitch: 1.5
-  groundLayer:
+  _moveSpeed: 7
+  _rollingSound: {fileID: 8300000, guid: abceb4922f742894e9f05f4a2c696082, type: 3}
+  _minVelocityToPlaySound: 0.1
+  _maxVelocity: 10
+  _maxVolume: 1
+  _minPitch: 0.8
+  _maxPitch: 1.5
+  _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  groundCheckDistance: 1
+  _groundCheckDistance: 1
 --- !u!82 &646558827971530863
 AudioSource:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0bf29e26f3056ea499fe313711b138bc, type: 2}
   m_audioClip: {fileID: 8300000, guid: abceb4922f742894e9f05f4a2c696082, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

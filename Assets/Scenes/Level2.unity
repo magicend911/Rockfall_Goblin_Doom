@@ -2049,8 +2049,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 54.401634, y: 1.8957865, z: 1}
-  m_Center: {x: 6.1672945, y: 0.44789326, z: 0}
+  m_Size: {x: 2.9, y: 3.26, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &160384235
 Transform:
   m_ObjectHideFlags: 0
@@ -2060,7 +2060,7 @@ Transform:
   m_GameObject: {fileID: 160384232}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 175.34, y: 20.98, z: 539.31}
+  m_LocalPosition: {x: 182.67, y: 22.21, z: 539.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3132,6 +3132,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3894925202062468965, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 96.5572
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894925202062468965, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 185.73358
+      objectReference: {fileID: 0}
     - target: {fileID: 4483591163555126625, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: _rock
       value: 
@@ -3248,6 +3256,18 @@ PrefabInstance:
       propertyPath: _rockSound
       value: 
       objectReference: {fileID: 1841028853}
+    - target: {fileID: 7695245971502063107, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
+      propertyPath: m_text
+      value: 0/50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7695245971502063107, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7695245971502063107, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 7809401597167183952, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4393,10 +4413,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1493536061282986764, guid: cb0bdd4efecf6c64c999d154d52bb393, type: 3}
-      propertyPath: m_Center.y
-      value: 1.75
-      objectReference: {fileID: 0}
     - target: {fileID: 5427906110674424370, guid: cb0bdd4efecf6c64c999d154d52bb393, type: 3}
       propertyPath: m_LocalPosition.x
       value: 188.33
