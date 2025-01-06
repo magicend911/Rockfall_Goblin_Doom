@@ -3275,11 +3275,15 @@ PrefabInstance:
     - target: {fileID: 8914432778879755144, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: _rock
       value: 
-      objectReference: {fileID: 1841028853}
+      objectReference: {fileID: 1841028850}
     - target: {fileID: 8914432778879755144, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: _finish
       value: 
       objectReference: {fileID: 160384233}
+    - target: {fileID: 8914432778879755144, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
+      propertyPath: _rockController
+      value: 
+      objectReference: {fileID: 1841028853}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9647,7 +9651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8548575754622767050, guid: 7d9b3953a0856914db6f03658c43f80e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 180.8
+      value: 181.27
       objectReference: {fileID: 0}
     - target: {fileID: 8548575754622767050, guid: 7d9b3953a0856914db6f03658c43f80e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9655,7 +9659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8548575754622767050, guid: 7d9b3953a0856914db6f03658c43f80e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 139.85
+      value: 139.96
       objectReference: {fileID: 0}
     - target: {fileID: 8548575754622767050, guid: 7d9b3953a0856914db6f03658c43f80e, type: 3}
       propertyPath: m_LocalRotation.w
