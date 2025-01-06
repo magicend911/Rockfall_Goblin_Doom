@@ -7971,7 +7971,7 @@ PrefabInstance:
     - target: {fileID: 7693498174258382512, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: _rockSound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1106369428}
     - target: {fileID: 7809401597167183952, guid: 8fad58461c974e542ae5fa84b86fc5ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
